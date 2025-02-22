@@ -22,8 +22,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+      {/* <Route index element={<Home/>}/> */}
         <Route path="/" element={<Layout/>}>
-          {/* <Route index element={<Entradas/>}/> */}
+        <Route index element={<Entradas/>}/>
+
           <Route path="/entradas" element={<Entradas/>}/>
 
           <Route path="/carnes-e-aves" element={<CarnesAves/>}/>

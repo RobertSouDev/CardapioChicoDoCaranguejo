@@ -13,28 +13,25 @@ export default function Navbar() {
     ];
 
     return (                 
-        <div>
-            {/* Barra superior */}
-            {/* <div className="h-12 border border-solid"></div> */}
+        <div className=''>
+            <div className="h-12 border border-solid"></div>
 
-            {/* Nome do Restaurante */}
-            <div className="mt-10 mb-5 border border-solid overflow-hidden flex justify-center">
+            {/* <div className="mt-10 mb-5 border border-solid overflow-hidden flex justify-center">
                 <img src={logo} alt="logo chico do caranguejo" className='w-40'/>
-            </div>
+            </div> */}
             {/* Banner */}
-            <div className=" border border-solid border-red-400 overflow-hidden">
+            <div className="flex md:justify-center  overflow-hidden">
                 <img                            
                     src={banner} 
                     alt="Banner" 
-                    className=" w-full object-left-top"
+                    className=" w-full md:w-96 object-left-top"
                 />
             </div>
 
 
 
-            {/* Menu de categorias */}
-            <div className="h-28 text-white flex p-3 gap-4 overflow-x-auto whitespace-nowrap px-4">
-                {menuItems.map((item, index) => (
+            <div className="h-28 border border-red-400 sticky top-0 z-50 text-white flex p-3 gap-4 overflow-x-auto whitespace-nowrap px-4">
+            {menuItems.map((item, index) => (
                     <MenuItem 
                         key={index} 
                         name={item} 
