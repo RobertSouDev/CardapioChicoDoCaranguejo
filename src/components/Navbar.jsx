@@ -1,4 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
+import logo from "../assets/chico-do-caranguejo-logo.png"
+import banner from "../assets/caranguejo-banner.jpg"
+
 
 export default function Navbar() {
     const menuItems = [
@@ -12,21 +15,22 @@ export default function Navbar() {
     return (                 
         <div>
             {/* Barra superior */}
-            <div className="h-12 border border-solid"></div>
+            {/* <div className="h-12 border border-solid"></div> */}
 
+            {/* Nome do Restaurante */}
+            <div className="mt-10 mb-5 border border-solid overflow-hidden flex justify-center">
+                <img src={logo} alt="logo chico do caranguejo" className='w-40'/>
+            </div>
             {/* Banner */}
-            <div className="h-48 border border-solid border-red-400 overflow-hidden">
+            <div className=" border border-solid border-red-400 overflow-hidden">
                 <img                            
-                    src="https://images.unsplash.com/photo-1739826155350-db63e78c098c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                    src={banner} 
                     alt="Banner" 
-                    className="h-48 w-full object-none"
+                    className=" w-full object-left-top"
                 />
             </div>
 
-            {/* Nome do Restaurante */}
-            <div className="h-12 border border-solid flex items-center justify-center">
-                <h2>Chico do Caranguejo</h2>
-            </div>
+
 
             {/* Menu de categorias */}
             <div className="h-28 text-white flex p-3 gap-4 overflow-x-auto whitespace-nowrap px-4">
@@ -50,9 +54,10 @@ function MenuItem({ name, path }) {
         <Link 
             to={path}
             className={`border border-gray-400  w-44 h-20 rounded-lg flex items-center justify-center min-w-[11rem]
-                ${isActive ? 'shadow-2xl' : 'shadow-none'}`}
+                ${isActive ? 'shadow-2xl opacity-100' : 'shadow-none opacity-50'}`}
         >
             <p className="text-center text-blue-900">{name}</p>
         </Link>
     );
 }
+
